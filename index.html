@@ -1,15 +1,9 @@
 <!DOCTYPE html>
-<html>
-
-</html lang = "en-gb">
-
-  <head> 
-    <!--Header, no writing-->
+<head> 
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 
-    <meta name="description" content="the quiz page for this website"> 
+    <meta name="description" content=""> 
 
     <link rel="stylesheet" href="style.css">
 
@@ -19,143 +13,29 @@
 
     <title> Quiz Two</title>
 
-   <!-- <link href="images\favicon.ico" rel="icon" type="image/x-icon">-->
+</head>
 
-  </head>
+<body></body> <!-- DONT ADD TO THIS!!  USE Static/Templates/Templates/Components INSTEAD -->
 
-  <body>
-    <!--Body, layout of the page-->
-        <nav>  
-            
-           <img src="">
-           
-            <button onclick="document.location='index.html'"><h1>Homepage</h1></button> 
+<script type="module">
+    import ComponentModule from "./Static/Scripts/Components/Core.js";
 
-            <button onclick="document.location='about.html'"> <h1>About</h1> </button>
+    if (document.readyState === "loading") {
+        document.addEventListener("load", () => 
+        {
+            return ComponentModule.Initialise();
+        });   
+    } 
+    else 
+    {
+        ComponentModule.Initialise();
+    }
 
-            <button onclick="document.location='quiz1.html'"><h1>Quiz1</h1> </button>
+    window.addEventListener("beforeunload", () => 
+    {
+        return ComponentModule.End();
+    });
 
-            <button onclick="document.location='quiz2.html'"><h1>Quiz2</h1> </button>
-
-            <button onclick="document.location='contactus.html'"><h1>Contact Us</h1> </button>
-
-            <button onclick="document.location='wiki.html'"><h1>Wiki</h1> </button>
-
-            <button onclick="document.location='game.html'"><h1>Game</h1> </button>
-            
-        </nav>
-       
-        <header>
-            <h1> Welcome to My Project </h1>
-            <h2>All you need t' know shall be below</h2>
-        </header>
-            
-        <main> 
-           
-          
-           
-            <section class="holder"> 
-                 <p class="OutLine">Question 1:</p>
-                <h2>What is the capital city of Turkey?</h2>
-                    <!-- Radio Buttons, for multiple choice or just one at a time -->
-                     <!--checkbox works the same as type-->
-                     <br>
-                 <label for="option1"> Badman </label>  <input type="radio" id="option12" name="option12" value="option12">
-                 <label for="option13"> Istanbul </label>  <input type="radio" id="option13" name="option13" value="option13">
-                 <label for="option1"> Ankara </label>  <input type="radio" id="option1" name="option1" value="option1">
-                 <label for="option14"> Kuşadasi </label>  <input type="radio" id="option14" name="option14" value="option14">
-              
-            </section>
-           
-<br>
-
- <section> 
-                <h1>Question 2:</h1>
-                <h2>What is Queen Elizabeth the 2nd's favourite dog breed? </h2>
-                    <!-- Radio Buttons, for multiple choice or just one at a time -->
-                     <!--checkbox works the same as type-->
-                     <br>
-                 <label for="option2"> Border Collie </label>  <input type="radio" id="option2" name="option2" value="option2">
-                 <label for="option22"> German Shepherd </label>  <input type="radio" id="option22" name="option22" value="option22">
-                 <label for="option2">Rotweiler</label>  <input type="radio" id="option23" name="option23" value="option23">
-                 <label for="option24"> Corgi </label>  <input type="radio" id="option24" name="option24" value="option24">
-              
-            </section>
-           
-<br>
-
-
- <section> 
-                <h1>Question 3:</h1>
-                <h2>Where is Gavin's friend?</h2>
-                <h3>Select the correct direction</h3>
-
-                <img src="imagesquiz2/images.jpg">
-                    <!-- Radio Buttons, for multiple choice or just one at a time -->
-                     <!--checkbox works the same as type-->
-                     <br>
-                   <label for="option1"> Direction:</label> 
-                   <br> 
-                <input type="range" name="quantity" min="1" max="3">
-                <output for="foo" onforminput="value = foo.valueAsNumber;"></output>
-              
-            </section>
-           
-<br>
-
-        <section> 
-               <h1>Question 4:</h1>
-                <h2>META: What is the second option?</h2>
-                    <legend> Select An Answer </legend>
-                    <br>
-                    <select id = "dropdown" name="dropdown" aria-placeholder="type">
-                         <option value="" disabled selected>Select your option</option>
-                        <option value="delivery">This one!</option>
-                        <option value="collection">OBVIOUSLY this!</option>
-                        <option value="collection">This one?</option>
-                        <option value="collection">Is it really this one?</option>
-
-                    </select>
-               
-
-        </section> 
-        <br>
-
-      <!--  <section> 
-             <h1>Question 5:</h1>
-                <h2>Question Goes here</h2>
-                 <legend> Select All that apply:</legend> -->
-
-                    <!-- Radio Buttons, for multiple choice or just one at a time -->
-                     <!--checkbox works the same as type-->
-                     <br>
-               
-                 
-        </section>
-            <!--sections and h2 -->
-
-        <br>
-        <button type="submit"> Check your score!</button>
-
-        </main>
-        
-        <aside>
-            <section>
-                <h1>About the Quiz!</h1>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id velit at mi tincidunt dapibus. Morbi at dui efficitur, tempus orci vitae, ullamcorper lectus. Integer fermentum lacinia turpis eu aliquet. Nullam vitae dignissim arcu, eget scelerisque magna. Aliquam condimentum fermentum tellus, in maximus nunc facilisis quis. Vestibulum eget aliquam odio, ac vulputate neque. Cras pulvinar nulla non mi tristique, quis volutpat purus interdum. Aenean a tortor non tortor congue bibendum. Nunc consectetur ante sed purus eleifend, in facilisis libero finibus. Ut porta neque at magna luctus aliquam. Duis convallis eros sapien, eget volutpat dolor congue a. Pellentesque a viverra magna. Fusce ut neque semper, blandit tellus ut, interdum augue. Nam mollis maximus dui eu dapibus. Fusce nunc felis, semper non dui eu, molestie pulvinar odio. Suspendisse et mauris nec dui condimentum dapibus.  </p>
-            </section>
-
-        </aside>
-    
-        <footer> 
-           
-           
-         <p> copyright stuff </p>
-          
-      
-        </footer>
-
-  </body>
+</script>
 
 </html>

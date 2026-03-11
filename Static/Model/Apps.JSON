@@ -1,0 +1,28 @@
+{
+    "InternetExplorer": 
+    {
+        "Display Name": "Internet Explorer",
+        "Icon": ""
+    },
+    "FileExplorer": 
+    {
+        "Display Name": "File Explorer",
+        "Icon": ""
+    },
+    "Printer": 
+    {
+        "Display Name": "",
+        "Icon": ""
+    },
+    "MicrosoftPaint": 
+    {
+        "DisplayName": "Microsoft Paint",
+        "Icon": ""
+    },
+    "Minecraft": 
+    {
+        "DisplayName": "Minecraft"
+    }
+
+
+}
