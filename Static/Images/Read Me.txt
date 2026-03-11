@@ -1,0 +1,5 @@
+Description:
+
+This folder contains Image / Picture files (.png, .jpg, .bmp)
+
+
