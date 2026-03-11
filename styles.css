@@ -28,11 +28,14 @@ footer
    background: #8adeff;
 background: linear-gradient(0deg, rgba(138, 222, 255, 1) 0%, rgba(67, 74, 222, 1) 5%, rgba(66, 88, 235, 1) 25%, rgba(64, 106, 230, 1) 50%, rgba(11, 59, 189, 1) 85%, rgba(145, 160, 255, 1) 96%, rgba(0, 14, 171, 1) 100%);
     padding: 1.1rem;
+    border-radius: 0.5rem;
+    border-color: rgba(0, 14, 171, 1);
 }
 
 footer img
 {
-    
+    display: inline-flex;
+    size: 50%;
 }
 
 
