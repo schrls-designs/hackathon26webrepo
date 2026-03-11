@@ -2,7 +2,7 @@
     "InternetExplorer": 
     {
         "Display Name": "Internet Explorer",
-        "Icon": ""
+        "Icon": "Static/Images/ieicon.png"
     },
     "FileExplorer": 
     {
