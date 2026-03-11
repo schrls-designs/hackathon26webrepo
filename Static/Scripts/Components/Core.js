@@ -27,7 +27,7 @@ async function AddHTMLComponent(ComponentName)
         .then(response => response.text())
         .then(data => 
             {
-                document.body.innerHTML += data;
+                document.body.innerHTML += "<div id='Component" + ComponentName +"'>" + data + "</div>";
             }
         );
 }
@@ -37,8 +37,12 @@ function Initialise()
     // Functions
     // INIT
     Setup();
-    AddHTMLComponent("Body");
-    AddHTMLComponent("Taskbar");
+
+
+    AddHTMLComponent("Body").then( () =>
+    {
+        AddHTMLComponent("Taskbar");
+    });
 }
 
 function End() 
