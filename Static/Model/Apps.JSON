@@ -2,26 +2,27 @@
     "InternetExplorer": 
     {
         "Display Name": "Internet Explorer",
-        "Icon": ""
+        "Icon": "Static/Images/ieicon.png"
     },
     "FileExplorer": 
     {
         "Display Name": "File Explorer",
-        "Icon": ""
+        "Icon": "Static/Images/filicon.png"
     },
     "Printer": 
     {
-        "Display Name": "",
-        "Icon": ""
+        "Display Name": "Printer",
+        "Icon": "Static/Images/printicon.png"
     },
     "MicrosoftPaint": 
     {
         "DisplayName": "Microsoft Paint",
-        "Icon": ""
+        "Icon": "Static/Images/painticon.png"
     },
     "Minecraft": 
     {
-        "DisplayName": "Minecraft"
+        "DisplayName": "Minecraft",
+        "Icon": "Static/Images/mcicon.png"
     }
 
 
