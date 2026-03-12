@@ -57,6 +57,7 @@ class AppComponent
         CursorImage.style.position = "fixed";
         CursorImage.style.height = "30px";
         CursorImage.style.width = "30px";
+        CursorImage.style.zIndex = "2";
 
         const xOffset = 15;
         const yOffset = 15;
