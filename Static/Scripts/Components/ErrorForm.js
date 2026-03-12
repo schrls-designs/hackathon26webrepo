@@ -6,7 +6,7 @@ import UtilitiesService from "../Services/Utilities.js";
 // CORE
 
 // CLASS
-class BSODComponent
+class ErrorFormComponent
 {
     constructor(DOMElement) 
     {
@@ -28,4 +28,4 @@ class BSODComponent
 
 }
 
-export default BSODComponent;
+export default ErrorFormComponent;

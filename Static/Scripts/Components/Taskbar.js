@@ -6,7 +6,7 @@ import UtilitiesService from "../Services/Utilities.js";
 // CORE
 
 // CLASS
-class BSODComponent
+class TaskbarComponent
 {
     constructor(DOMElement) 
     {
@@ -63,4 +63,4 @@ class BSODComponent
 
 }
 
-export default BSODComponent;
+export default TaskbarComponent;
