@@ -4,7 +4,32 @@ import UtilitiesService from "../Services/Utilities.js";
 import AppBehaviour from "../AppBehaviour.js";
 
 // CORE 
+let CurrentlySelectedDesktopApp;
+let Apps = [];
 
+// Functions
+// MECHANICS
+function SelectDesktopApp(_AppComponent) 
+{
+    // Functions
+    // INIT
+    _AppComponent.Element.classList.add("DesktopApp-Clicked");
+    CurrentlySelectedDesktopApp = _AppComponent;
+
+    Apps.forEach(OtherAppComponent => {
+        // Functions
+        // INIT
+        if (OtherAppComponent.Type !== "Desktop") 
+        {
+            return;
+        }
+
+        if (OtherAppComponent !== CurrentlySelectedDesktopApp) 
+        {
+            OtherAppComponent.Element.classList.remove("DesktopApp-Clicked");
+        }
+    });
+}
 
 // CLASS
 class AppComponent
@@ -20,6 +45,8 @@ class AppComponent
             "Taskbar" : this.HandleTaskbarApp.bind(this),
             "Desktop" : this.HandleDesktopApp.bind(this)
         }
+
+        Apps.push(this);
     }
 
 
@@ -56,7 +83,10 @@ class AppComponent
         {
             // Functions
             // INIT
-            ToggleState = !ToggleState;
+
+            SelectDesktopApp(this);
+
+            /*ToggleState = !ToggleState;
 
             if (ToggleState) 
             {
@@ -65,7 +95,7 @@ class AppComponent
             else 
             {
                 this.Element.classList.remove("DesktopApp-Clicked")
-            }
+            }*/
 
         }   
         
