@@ -47,13 +47,20 @@ footer .startbar
 
     z-index: 1;
 
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    padding-right: 9vw;
+    padding: 2rem;
+    padding-right: 4vw;
 
     padding-left: 1rem;
+
+   
 }
 
+.startbar p
+{
+    margin-left: 5rem;
+    font-family: Tahoma, sans-serif;
+    font-style: italic;
+}
 
 footer .nonfunctional
 {
@@ -71,10 +78,17 @@ background: linear-gradient(0deg, rgba(138, 222, 255, 1) 0%, rgba(67, 74, 222, 1
 
     z-index: 1;
     
-    height: 1rem;
+    height: 5rem;
 
     padding-top: 2rem;
     padding-bottom: 2rem;
+
+   
+}
+
+footer .nonfunctional p
+{
+    color: rgba(66, 88, 235, 1);
 }
 
 footer button p 
