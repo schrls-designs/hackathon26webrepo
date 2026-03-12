@@ -1,0 +1,124 @@
+
+footer
+{
+   background: #8adeff;
+background: linear-gradient(0deg, rgba(138, 222, 255, 1) 0%, rgba(67, 74, 222, 1) 5%, rgba(66, 88, 235, 1) 25%, rgba(64, 106, 230, 1) 50%, rgba(11, 59, 189, 1) 85%, rgba(145, 160, 255, 1) 96%, rgba(0, 14, 171, 1) 100%);
+    
+    padding: 1.1rem;
+
+    border-color: rgba(0, 14, 171, 1);
+
+    position: fixed; bottom: 0px; height:5rem; width:100%;   
+}
+
+footer .startbutton
+{
+
+    width: 50%;
+
+    width: 64px;
+    height: 64px;
+
+    transition: all 0.1s ease-in-out;
+
+    margin-top: -0.5rem;
+
+    position: fixed;
+
+    left: 1rem;
+
+    z-index: 10;
+}
+
+footer .startbar
+{
+    background: #8aff8a;
+    background: linear-gradient(0deg, rgb(185, 255, 138) 0%, rgb(67, 222, 127) 5%, rgb(66, 235, 75) 25%, rgb(64, 230, 78) 50%, rgb(11, 189, 50) 85%, rgba(145, 160, 255, 1) 96%, rgb(0, 171, 57) 100%);
+    
+
+
+    width: 1;
+
+    margin-top: -1.1rem;
+
+    position: absolute;
+
+    left:0rem;
+
+    z-index: 1;
+
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-right: 9vw;
+
+    padding-left: 1rem;
+}
+
+
+footer .nonfunctional
+{
+    background: #8adeff;
+background: linear-gradient(0deg, rgba(138, 222, 255, 1) 0%, rgba(67, 74, 222, 1) 5%, rgba(66, 88, 235, 1) 25%, rgba(64, 106, 230, 1) 50%, rgba(11, 59, 189, 1) 85%, rgba(145, 160, 255, 1) 96%, rgba(0, 14, 171, 1) 100%);
+   border-color: rgba(0, 6, 70, 0.507);
+
+    margin-top: -1.1rem;
+
+    position: absolute;
+
+    right:0rem;
+
+    width: 2vw;
+
+    z-index: 1;
+    
+    height: 1rem;
+
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+footer button p 
+{
+    font-style: italic, bold;
+}
+
+footer ul
+{
+    display: flex;
+    list-style-type: none;
+    flex-wrap: nowrap;
+
+    width: 25%;
+
+    justify-content:space-around;
+
+    align-items: stretch;
+
+    margin-left: 12rem;
+ 
+}
+
+footer ul li 
+{    
+    padding-left: 1rem;
+    padding-right: 1rem;
+    align-items: left;
+       
+}
+
+footer ul li img
+{
+    width: 64px;
+    height: 64px;
+
+    transition: all 0.1s ease-in-out;
+
+    margin-top: -0.5rem;
+}
+
+footer ul li img:hover
+{
+    width: 68px;
+    height: 68px;
+}
+
