@@ -17,6 +17,15 @@ function Setup()
 }
 
 // Direct
+UtilitiesService.RequestFullScreen = function()
+{
+    const elem = document.documentElement;
+
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    }
+}
+
 UtilitiesService.MousePosition = function()
 {
     // Functions

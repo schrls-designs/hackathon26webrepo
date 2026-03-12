@@ -68,8 +68,6 @@ class AppComponent
         // MECHANICS
         function Render(DeltaTime, AccumulatedTime) 
         {
-            console.log(AccumulatedTime);
-
             // CORE
             const MousePosition = UtilitiesService.MousePosition();
 
