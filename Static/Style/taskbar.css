@@ -37,7 +37,7 @@ footer .startbutton
     width: 64px;
     height: 64px;
 
-    transition: all 0.1s ease-in-out;
+    transition: all 2s ease-in-out;
 
     margin-top: -0.5rem;
 
@@ -46,6 +46,30 @@ footer .startbutton
     left: 1rem;
 
     z-index: 10;
+}
+
+footer .startbutton:hover
+{
+
+    width: 69px;
+    height: 69px;
+    rotate: 360deg;
+   
+}
+
+footer .startbutton:active
+{
+    animation: rotateAnimation 1s linear 1;
+}
+
+footer .startbar p:hover
+{
+    animation: rotateAnimation 1s linear 1;
+}
+
+@keyframes rotateAnimation {
+	from {transform: rotateY(0deg);}
+	to {transform: rotateY(360deg);}
 }
 
 footer .volumeicon
