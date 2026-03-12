@@ -1,8 +1,50 @@
 <!--<p> TEST BODY COMPONENT </p>-->
+<!DOCTYPE html>
 
+<style>
+    #error {
+  position: absolute;
+  z-index: 10;
+ background: #ebf5d2;
 
- <!-- Draggable DIV -->
+  border: 0.2rem solid;
+  border-color: rgba(0, 14, 171, 1);
+  text-align: top;
+
+  padding-bottom: 1rem;
+  margin-top: 15rem;
+  width: 17vw;   
+  height: 7rem;
+
+}
+
+#error p
+{
+   color: #000000;
+   font-size: smaller;
+   font-weight: 100;
+}
+
+#error button
+{
+    border-radius: 0;
+    margin-top: 0.1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+#errorheader {
+  cursor: move;
+  z-index: 10;
+  background: linear-gradient(0deg, rgba(138, 222, 255, 1) 0%, rgba(67, 74, 222, 1) 5%, rgba(66, 88, 235, 1) 25%, rgba(64, 106, 230, 1) 50%, rgba(11, 59, 189, 1) 85%, rgba(145, 160, 255, 1) 96%, rgba(0, 14, 171, 1) 100%);
+  color: #ffffff;
+  font-weight: 100;
+  font-family: Tahoma, sans-serif;
+}
+</style>
+
 <div id="error">
+
   <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
   <div id="errorheader">CRITICAL DRAGGABLE ERROR</div>
   <p>ERROR</p>
@@ -14,13 +56,65 @@
 </div> 
 
 <section class="DesktopApp">
-
-<!--<img src="Static\Images\recyclbinicon.png" alt="a stylised icon emulating the windows XP recycle bin"> 
-<img src="Static\Images\mcicon.png" alt="a stylised icon emulating the game minecraft"> 
-<img src="Static\Images\painticon.png" alt="a stylised icon emulating the ms paint icon"> -->
-
 <!--background image-->
 </section>
-<nav>
-<!--dashbar-->
-</nav>
+
+ <script>
+ // Make the DIV element draggable:
+dragElement(document.getElementById("error"));
+
+function dragElement(elmnt) 
+{
+console.log("in dragelement func")
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    // if present, the header is where you move the DIV from:
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    // otherwise, move the DIV from anywhere inside the DIV:
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) 
+  {
+    console.log("in mousedown func")
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) 
+  {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() 
+  {
+    // stop moving when mouse button is released:
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+
+}
+</script>
+
+
+
+</body>
+</html>
+
+ 
