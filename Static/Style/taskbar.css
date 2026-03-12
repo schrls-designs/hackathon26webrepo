@@ -30,6 +30,35 @@ footer .startbutton
     z-index: 10;
 }
 
+footer .volumeicon
+{
+
+    width: 50%;
+
+    width: 64px;
+    height: 64px;
+
+    transition: all 0.3s ease-in-out;
+
+    margin-top: -0.5rem;
+
+    position: fixed;
+
+    right: 3rem;
+
+    z-index: 10;
+}
+
+footer .volumeicon:hover
+{
+
+    width: 50%;
+
+    width: 68px;
+    height: 68px;
+    rotate: 1360deg;
+}
+
 footer .startbar
 {
     background: #8aff8a;
@@ -68,7 +97,7 @@ footer .startbar
 footer .nonfunctional
 {
     background: #8adeff;
-background: linear-gradient(0deg, rgba(138, 222, 255, 1) 0%, rgba(67, 74, 222, 1) 5%, rgba(66, 88, 235, 1) 25%, rgba(64, 106, 230, 1) 50%, rgba(11, 59, 189, 1) 85%, rgba(145, 160, 255, 1) 96%, rgba(0, 14, 171, 1) 100%);
+    background: linear-gradient(0deg, rgba(138, 222, 255, 1) 0%, rgba(67, 74, 222, 1) 5%, rgba(66, 88, 235, 1) 25%, rgba(64, 106, 230, 1) 50%, rgba(11, 59, 189, 1) 85%, rgba(145, 160, 255, 1) 96%, rgba(0, 14, 171, 1) 100%);
    border-color: rgba(0, 6, 70, 0.507);
 
     margin-top: -1.1rem;
