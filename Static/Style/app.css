@@ -29,9 +29,21 @@
 
 .DesktopApp 
 {
-    
-    background-color: rgba(255, 255, 255, 0);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 1%;
+    margin-left: 0vw;
+    background-color: rgba(255, 255, 255, 0.014);
 }
+
+.DesktopApp img
+{
+    width: 100px;
+    height: 100px;
+    padding: 0.5rem;
+}
+
 
 .DesktopApp-Clicked 
 {
