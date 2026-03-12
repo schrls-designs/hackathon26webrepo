@@ -83,8 +83,15 @@ class AppComponent
             }
         }
 
+        function Disconnected() 
+        {
+            // Functions
+            // INIT
+            CursorImage.parentNode.removeChild(CursorImage);
+        }
+
         CoreComponentModule.UnbindRuntimeMethod("FakeLoading");
-        CoreComponentModule.BindRuntimeMethod("FakeLoading", Render);
+        CoreComponentModule.BindRuntimeMethod("FakeLoading", Render, Disconnected);
 
     }
 

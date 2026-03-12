@@ -103,21 +103,30 @@ async function AddHTMLComponent(ComponentName, Options)
     return ComponentWrapperDiv; 
 }
 
-function BindRuntimeMethod(Name, CallbackFunction) 
+function BindRuntimeMethod(Name, CallbackFunction, DisconnectCallbackFunction) 
 {
     // Functions
     // INIT
     RuntimeMethods[Name] = 
     {
         "StartTime": UtilitiesService.Time(),
-        "Function": CallbackFunction
+        "Function": CallbackFunction,
+        "DisconnectFunction": DisconnectCallbackFunction
     }
 }
 
 function UnbindRuntimeMethod(Name) 
 {
+    // CORE
+    const CallableMeta = RuntimeMethods[Name];
+
     // Functions
-    // INIT
+    // INIT    
+    if (CallableMeta && CallableMeta["DisconnectFunction"] != undefined) 
+    {
+        CallableMeta["DisconnectFunction"]();
+    }
+
     delete RuntimeMethods[Name];
 }
 
