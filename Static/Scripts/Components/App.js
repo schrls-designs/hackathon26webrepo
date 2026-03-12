@@ -1,6 +1,9 @@
 // Modules
 import CoreComponentModule from "../Core.js";
 import UtilitiesService from "../Services/Utilities.js";
+import AppBehaviour from "../AppBehaviour.js";
+
+// CORE 
 
 
 // CLASS
@@ -19,6 +22,8 @@ class AppComponent
         // Functions
         // INIT
         this.Element.classList.add("TaskbarApp");
+
+        this.AppNameParagraph.parentNode.removeChild(this.AppNameParagraph);
     }
 
     HandleDesktopApp() 
@@ -55,7 +60,11 @@ class AppComponent
         this.AppIconImage.src = this.IconURL;
         this.AppNameParagraph.innerHTML = this.DisplayName;
 
-        return TypeToHandle[Type || "Desktop"]();
+        TypeToHandle[Type || "Desktop"](); // TYPE BEHAVIOUR
+
+        this.AppBehaviour = new AppBehaviour(this);
+        
+
     }
 
     End() 
@@ -65,5 +74,6 @@ class AppComponent
     }
 
 }
+
 
 export default AppComponent;
