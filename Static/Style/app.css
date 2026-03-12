@@ -2,11 +2,29 @@
 {
     background-color: rgba(255, 255, 255, 0);
     transition: background-color 1s ease;
+  
+
+    width: 64px;
+    height: 64px;
 }
 
 .TaskbarApp:hover 
 {
     background-color: rgba(255, 255, 255, 0.5);
+}
+
+#AppIcon
+{
+   transition: all 0.5s ease-in-out;
+    width: 64px;
+    height: 64px;
+    margin-top: -0.5rem;
+}
+
+#AppIcon:hover
+{
+    width: 68px;
+    height: 68px;
 }
 
 .DesktopApp 
