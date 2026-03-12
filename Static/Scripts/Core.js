@@ -14,7 +14,7 @@ let RuntimeMethods = {};
 // MECHANICS
 async function RuntimeLoop() {
     // CORE
-    let AccumulatedTime = 0;
+    //let AccumulatedTime = 0;
 
     let LastFrameTime = UtilitiesService.Time();
 
@@ -30,14 +30,15 @@ async function RuntimeLoop() {
 
         for (const CallableName in RuntimeMethods) 
         {
-            const CallbackFunction = RuntimeMethods[CallableName];
+            const CallableMeta = RuntimeMethods[CallableName];
+            const AccumulatedTime = TimeNow - CallableMeta["StartTime"];
+
+            const CallbackFunction = CallableMeta["Function"];
 
             CallbackFunction(DeltaTime, AccumulatedTime);
         }
 
         LastFrameTime = TimeNow;
-        AccumulatedTime += DeltaTime;
-
         requestAnimationFrame(Render);
 
     }
@@ -106,7 +107,11 @@ function BindRuntimeMethod(Name, CallbackFunction)
 {
     // Functions
     // INIT
-    RuntimeMethods[Name] = CallbackFunction;
+    RuntimeMethods[Name] = 
+    {
+        "StartTime": UtilitiesService.Time(),
+        "Function": CallbackFunction
+    }
 }
 
 function UnbindRuntimeMethod(Name) 

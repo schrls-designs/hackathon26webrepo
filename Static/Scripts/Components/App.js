@@ -49,6 +49,45 @@ class AppComponent
         Apps.push(this);
     }
 
+    FakeLoading() 
+    {
+        // CORE
+        let CursorImage = document.createElement("img");
+        CursorImage.src = "Static/Images/loadingsticker.gif";
+        CursorImage.style.position = "fixed";
+        CursorImage.style.height = "30px";
+        CursorImage.style.width = "30px";
+
+        const xOffset = 15;
+        const yOffset = 15;
+
+        document.body.appendChild(CursorImage);
+
+        // Functions
+        // MECHANICS
+        function Render(DeltaTime, AccumulatedTime) 
+        {
+            console.log(AccumulatedTime);
+
+            // CORE
+            const MousePosition = UtilitiesService.MousePosition();
+
+            // Functions
+            // INIT
+            CursorImage.style.top = (MousePosition.Y + yOffset) + "px";
+            CursorImage.style.left = (MousePosition.X + xOffset) + "px";
+
+            if (AccumulatedTime > 5) 
+            {
+                return CoreComponentModule.UnbindRuntimeMethod("FakeLoading");
+            }
+        }
+
+        CoreComponentModule.UnbindRuntimeMethod("FakeLoading");
+        CoreComponentModule.BindRuntimeMethod("FakeLoading", Render);
+
+    }
+
 
     HandleTaskbarApp() 
     {
@@ -109,7 +148,9 @@ class AppComponent
     Initialise(Name, Type) 
     {
         // CORE
-        let ClickedEvents = [];
+        let ClickedEvents = [
+            this.FakeLoading
+        ];
 
         let AppMeta = window.Apps[Name];
 

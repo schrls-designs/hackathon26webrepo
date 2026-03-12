@@ -1,7 +1,32 @@
 let UtilitiesService = {}
 
+// CORE
+let MouseX = 0;
+let MouseY = 0;
+
 // Functions
+// MECHANICS
+function Setup() 
+{
+    // Functions
+    // DIRECT
+    document.addEventListener('mousemove', (Event) => {
+        MouseX = Event.clientX;
+        MouseY = Event.clientY;
+    });
+}
+
 // Direct
+UtilitiesService.MousePosition = function()
+{
+    // Functions
+    // INIT
+    return  {
+        "X" : MouseX,
+        "Y" : MouseY
+    }
+}
+
 UtilitiesService.Lerp = function(StartValue, EndValue, Alpha) // Linear Interpolation
 {
     // Functions
@@ -30,5 +55,7 @@ UtilitiesService.Round = function(Value, Decimals) // Round Number to Decimal Pl
     // INIT
     return Math.round(Value * Math.pow(10, Decimals)) / Math.pow(10, Decimals);
 }
+
+Setup();
 
 export default UtilitiesService;
