@@ -68,8 +68,6 @@ class AppComponent
         // MECHANICS
         function Render(DeltaTime, AccumulatedTime) 
         {
-            console.log(AccumulatedTime);
-
             // CORE
             const MousePosition = UtilitiesService.MousePosition();
 
@@ -176,7 +174,7 @@ class AppComponent
 
             for (const i in ClickedEvents) 
             {
-                const CallbackFunction = ClickedEvents[i];
+                let CallbackFunction = ClickedEvents[i];
                 CallbackFunction();
             }
         }

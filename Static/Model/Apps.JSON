@@ -1,17 +1,22 @@
 {
+    "FullScreen": 
+    {
+        "DisplayName": "Full Screen",
+        "Icon": "Static/Images/fullscreenicon.png"
+    },
     "InternetExplorer": 
     {
-        "Display Name": "Internet Explorer",
+        "DisplayName": "Internet Explorer",
         "Icon": "Static/Images/ieicon.png"
     },
     "FileExplorer": 
     {
-        "Display Name": "File Explorer",
+        "DisplayName": "File Explorer",
         "Icon": "Static/Images/filicon.png"
     },
     "Printer": 
     {
-        "Display Name": "Printer",
+        "DisplayName": "Printer",
         "Icon": "Static/Images/printicon.png"
     },
     "MicrosoftPaint": 
