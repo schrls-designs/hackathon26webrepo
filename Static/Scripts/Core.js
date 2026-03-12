@@ -123,11 +123,13 @@ function ComponentLoadedCallback()
     AddHTMLComponent("LoadingBar");
 }
 
-function Initialise() 
+async function Initialise() 
 {
     // Functions
     // INIT
-    Setup();
+    await Setup();
+
+    document.title = window.Core["SiteName"];
 
     AddHTMLComponent("Body").then( () =>
     {

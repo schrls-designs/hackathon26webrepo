@@ -1,4 +1,6 @@
 {
     "SiteName": "Panedows-XP",
-    "Description": "Hackathon 2026 Chaos Creations project"
+    "Description": "Hackathon 2026 Chaos Creations project",
+
+    "BSODTimer": 20
 }
