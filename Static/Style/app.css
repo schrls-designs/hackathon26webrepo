@@ -1,0 +1,20 @@
+.TaskbarApp 
+{
+    background-color: rgba(255, 255, 255, 0);
+    transition: background-color 1s ease;
+}
+
+.TaskbarApp:hover 
+{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.DesktopApp 
+{
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.DesktopApp-Clicked 
+{
+    background-color: rgba(0, 0, 255, 1);
+}

@@ -3,8 +3,6 @@ import CoreComponentModule from "../Core.js";
 import UtilitiesService from "../Services/Utilities.js";
 
 
-// CORE
-
 // CLASS
 class AppComponent
 {
@@ -15,9 +13,32 @@ class AppComponent
         this.AppNameParagraph = DOMElement.querySelector("#AppName");
     }
 
+
+    HandleTaskbarApp() 
+    {
+        // Functions
+        // INIT
+        this.Element.classList.add("TaskbarApp");
+    }
+
+    HandleDesktopApp() 
+    {
+        // FunctionS
+        // INIT
+        this.Element.classList.add("DesktopApp");
+    }
+
+
     Initialise(Name, Type) 
     {
         // CORE
+        const TypeToHandle = 
+        {
+            "Taskbar" : this.HandleTaskbarApp.bind(this),
+            "Desktop" : this.HandleDesktopApp.bind(this)
+        }
+
+
         let AppMeta = window.Apps[Name];
 
         console.log("AppName: " + Name);
@@ -33,6 +54,8 @@ class AppComponent
 
         this.AppIconImage.src = this.IconURL;
         this.AppNameParagraph.innerHTML = this.DisplayName;
+
+        return TypeToHandle[Type || "Desktop"]();
     }
 
     End() 
