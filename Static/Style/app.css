@@ -33,15 +33,18 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    width: 1%;
-    margin-left: 2vw;
+    width: 4vw;
+    margin-left: 3vw;
     background-color: rgba(255, 255, 255, 0.014);
+
+    font-weight: 400;
+    font-style: normal;
 }
 
 .DesktopApp img
 {
-    width: 100px;
-    height: 100px;
+    width: 128px;
+    height: 128px;
     padding: 0.5rem;
 }
 
