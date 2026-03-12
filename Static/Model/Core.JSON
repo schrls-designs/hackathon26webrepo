@@ -2,6 +2,6 @@
     "SiteName": "Panedows-XP",
     "Description": "Hackathon 2026 Chaos Creations project",
 
-    "BSODTimer": 30,
+    "BSODTimer": 60,
     "BSODRefreshTimer": 3
 }
