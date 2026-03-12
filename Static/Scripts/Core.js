@@ -71,8 +71,12 @@ async function GetHTMLComponent(ComponentName)
     return await response.text();
 }
 
-async function AddHTMLComponent(ComponentName) 
+async function AddHTMLComponent(ComponentName, Options) 
 {
+    // CORE
+    Options = Options || {};
+    Options["Args"] = Options["Args"] || [];
+
     // Functions
     // INIT
     let ComponentHTML = await GetHTMLComponent(ComponentName);
@@ -82,16 +86,18 @@ async function AddHTMLComponent(ComponentName)
     ComponentWrapperDiv.id = "Component" + ComponentName;
     ComponentWrapperDiv.innerHTML = ComponentHTML;
 
-    document.body.appendChild(ComponentWrapperDiv);
+    (Options["Parent"] || document.body).appendChild(ComponentWrapperDiv);
 
     try {
         const Module = await import("./Components/" + ComponentName + ".js");
 
         ComponentHandlerClass = new Module.default(ComponentWrapperDiv);
-        ComponentHandlerClass.Initialise();
+        ComponentHandlerClass.Initialise(...Options["Args"]);
     } catch (Error) {
         console.log("Failed:", Error);
     }
+
+    return ComponentWrapperDiv; 
 }
 
 function BindRuntimeMethod(Name, CallbackFunction) 

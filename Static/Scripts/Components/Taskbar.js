@@ -15,7 +15,7 @@ class BSODComponent
         this.PinnedItemsList = DOMElement.querySelector("#PinnedItems");
     }
 
-    AddPinnedApp(AppName) 
+    async AddPinnedApp(AppName) 
     {
         // CORE
         const AppInfo = window.Apps[AppName];
@@ -23,11 +23,17 @@ class BSODComponent
         // Functions
         // INIT
         let ListElement = document.createElement("li");
-        
-        let AppIconImage = document.createElement("img")
-        AppIconImage.src = AppInfo["Icon"];
 
-        ListElement.appendChild(AppIconImage);
+        let App = await CoreComponentModule.AddHTMLComponent("App", 
+        {
+            "Parent" : ListElement,
+            "Args" : [AppName, "Taskbar"]
+        });
+        
+        //let AppIconImage = document.createElement("img")
+        //AppIconImage.src = AppInfo["Icon"];
+
+        ListElement.appendChild(App);
 
         this.PinnedItemsList.appendChild(ListElement);
 

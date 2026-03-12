@@ -13,10 +13,25 @@ class BSODComponent
         this.Element = DOMElement;
     }
 
+    Refresh() 
+    {
+        // Functions
+        // INIT
+        return location.reload();
+    }
+
+    HandleRefresh() 
+    {
+        // Functions
+        // INIT    
+        setTimeout(this.Refresh, window.Core["BSODRefreshTimer"] * 1000);
+    }
+
     Initialise() 
     {
         // Functions
         // INIT
+        this.HandleRefresh();
     }
 
     End() 
