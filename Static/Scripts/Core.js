@@ -153,6 +153,8 @@ CoreComponentModule.BindRuntimeMethod = BindRuntimeMethod;
 CoreComponentModule.UnbindRuntimeMethod = UnbindRuntimeMethod;
 CoreComponentModule.LoadingBarFinished = LoadingBarFinished;
 
+CoreComponentModule.AddHTMLComponent = AddHTMLComponent;
+
 CoreComponentModule.Initialise = Initialise;
 CoreComponentModule.End = End;
 
