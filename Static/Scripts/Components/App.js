@@ -174,7 +174,7 @@ class AppComponent
 
             for (const i in ClickedEvents) 
             {
-                const CallbackFunction = ClickedEvents[i];
+                let CallbackFunction = ClickedEvents[i];
                 CallbackFunction();
             }
         }

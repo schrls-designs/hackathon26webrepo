@@ -40,7 +40,7 @@ class AppBehaviour
             //console.log("Binded click event");
         } else 
         {
-            this.Handler = {};
+            this.Handler = {"Clicked" : function(){} };
         }
 
         App.Element.style.cursor = "pointer";

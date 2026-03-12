@@ -1,4 +1,4 @@
-import UtilitiesService from "../Services/Utilities";
+import UtilitiesService from "../Services/Utilities.js";
 
 class AppHandler 
 {
@@ -6,13 +6,9 @@ class AppHandler
     {
         // Functions
         // INIT
-        this.App = App;
+        console.log("INITIALISING FULL SCREEN!!");
 
-        let FileInput = document.createElement("input");
-        FileInput.type = "File";
-        FileInput.classList.add("FileInput");
-        
-        App.Element.appendChild(FileInput);
+        this.App = App;
     }
 
     Clicked() 

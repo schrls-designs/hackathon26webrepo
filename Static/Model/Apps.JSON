@@ -2,7 +2,7 @@
     "FullScreen": 
     {
         "DisplayName": "Full Screen",
-        "Icon": "Static/Images/fsicon.png"
+        "Icon": "Static/Images/fullscreenicon.png"
     },
     "InternetExplorer": 
     {
