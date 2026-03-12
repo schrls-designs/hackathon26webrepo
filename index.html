@@ -18,22 +18,22 @@
 <body></body> <!-- DONT ADD TO THIS!!  USE Static/Templates/Templates/Components INSTEAD -->
 
 <script type="module">
-    import ComponentModule from "./Static/Scripts/Components/Core.js";
+    import CoreComponentModule from "./Static/Scripts/Core.js";
 
     if (document.readyState === "loading") {
         document.addEventListener("load", () => 
         {
-            return ComponentModule.Initialise();
+            return CoreComponentModule.Initialise();
         });   
     } 
     else 
     {
-        ComponentModule.Initialise();
+        CoreComponentModule.Initialise();
     }
 
     window.addEventListener("beforeunload", () => 
     {
-        return ComponentModule.End();
+        return CoreComponentModule.End();
     });
 
 </script>
