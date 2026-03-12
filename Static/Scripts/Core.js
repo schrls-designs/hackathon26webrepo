@@ -52,12 +52,14 @@ async function Setup()
     const JSONApps = await fetch("Static/Model/Apps.json").then(res => res.json());
     const JSONTaskbar = await fetch("Static/Model/Taskbar.json").then(res => res.json());
     const JSONCore = await fetch("Static/Model/Core.json").then(res => res.json());
+    const JSONDesktop = await fetch("Static/Model/Desktop.json").then(res => res.json());
 
     // Functions
     // INIT
     window.Core = JSONCore;
     window.Taskbar = JSONTaskbar;
     window.Apps = JSONApps;
+    window.Desktop = JSONDesktop;
 
     //console.log("Apps vv");
     //console.log(JSONApps);

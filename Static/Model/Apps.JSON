@@ -23,6 +23,11 @@
     {
         "DisplayName": "Minecraft",
         "Icon": "Static/Images/mcicon.png"
+    },
+    "RecycleBin": 
+    {
+        "DisplayName": "Recycle Bin",
+        "Icon": "Static/Images/recyclbinicon.png"
     }
 
 

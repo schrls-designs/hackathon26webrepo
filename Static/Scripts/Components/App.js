@@ -14,35 +14,72 @@ class AppComponent
         this.Element = DOMElement;
         this.AppIconImage = DOMElement.querySelector("#AppIcon");
         this.AppNameParagraph = DOMElement.querySelector("#AppName");
+
+        this.TypeToHandle = 
+        {
+            "Taskbar" : this.HandleTaskbarApp.bind(this),
+            "Desktop" : this.HandleDesktopApp.bind(this)
+        }
     }
 
 
     HandleTaskbarApp() 
     {
+        // CORE
+        
+
         // Functions
+        // MECHANICS
+        function Clicked()
+        {
+            // Functions
+            // INIT
+
+        }
+
         // INIT
         this.Element.classList.add("TaskbarApp");
 
         this.AppNameParagraph.parentNode.removeChild(this.AppNameParagraph);
+
+        return {"Clicked" : Clicked}
     }
 
     HandleDesktopApp() 
     {
+        // CORE
+        let ToggleState = false;
+
         // FunctionS
+        // MECHANICS
+        function Clicked() 
+        {
+            // Functions
+            // INIT
+            ToggleState = !ToggleState;
+
+            if (ToggleState) 
+            {
+                this.Element.classList.add("DesktopApp-Clicked");
+            }
+            else 
+            {
+                this.Element.classList.remove("DesktopApp-Clicked")
+            }
+
+        }   
+        
         // INIT
         this.Element.classList.add("DesktopApp");
+        
+        return {"Clicked" : Clicked}
     }
 
 
     Initialise(Name, Type) 
     {
         // CORE
-        const TypeToHandle = 
-        {
-            "Taskbar" : this.HandleTaskbarApp.bind(this),
-            "Desktop" : this.HandleDesktopApp.bind(this)
-        }
-
+        let ClickedEvents = [];
 
         let AppMeta = window.Apps[Name];
 
@@ -50,6 +87,21 @@ class AppComponent
         console.log(AppMeta);
 
         // Functions
+        // MECHANICS
+        function onClick() 
+        {
+            // Functions
+            // INIT
+            console.log("Clicked!");
+            console.log(ClickedEvents);
+
+            for (const i in ClickedEvents) 
+            {
+                const CallbackFunction = ClickedEvents[i];
+                CallbackFunction();
+            }
+        }
+
         // INIT
         this.Name = Name;
         this.Type = Type;
@@ -60,11 +112,15 @@ class AppComponent
         this.AppIconImage.src = this.IconURL;
         this.AppNameParagraph.innerHTML = this.DisplayName;
 
-        TypeToHandle[Type || "Desktop"](); // TYPE BEHAVIOUR
+        let TypeMeta = this.TypeToHandle[Type || "Desktop"](); // TYPE BEHAVIOUR
+        ClickedEvents.push(TypeMeta["Clicked"].bind(this));
 
+            
         this.AppBehaviour = new AppBehaviour(this);
+        ClickedEvents.push(this.AppBehaviour.Clicked.bind(this.AppBehaviour));
         
-
+        // EVENTS
+        this.Element.onclick = onClick;
     }
 
     End() 

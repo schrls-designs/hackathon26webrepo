@@ -33,20 +33,24 @@ class AppBehaviour
         // INIT
         this.App = App;
 
-        console.log("Cached App Handlers");
-        console.log(CachedAppHandlers);
-
         if (CachedAppHandlers[App.Name] != undefined) 
         {
             this.Handler = new CachedAppHandlers[App.Name](App);
-            App.Element.onclick = this.Handler.Clicked;
-            console.log("Binded click event");
-        } //else 
-        //{
-        //    this.Handler = {};
-        //}
+            //App.Element.onclick = this.Handler.Clicked;
+            //console.log("Binded click event");
+        } else 
+        {
+            this.Handler = {};
+        }
 
         App.Element.style.cursor = "pointer";
+    }
+
+    Clicked() 
+    {
+        // Functions
+        // INIT
+        return this.Handler.Clicked();
     }
 
 }
