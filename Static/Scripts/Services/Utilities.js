@@ -17,10 +17,20 @@ function Setup()
 }
 
 // Direct
+UtilitiesService.Destroy = function(Element) 
+{
+    // Functions
+    // INIT
+    return Element.parentNode.removeChild(Element);
+}
+
 UtilitiesService.RequestFullScreen = function()
 {
+    // Core
     const elem = document.documentElement;
 
+    // Functions
+    // INIT
     if (elem.requestFullscreen) {
         elem.requestFullscreen();
     }

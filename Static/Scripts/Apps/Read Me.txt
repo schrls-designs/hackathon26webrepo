@@ -1,0 +1,5 @@
+Description:
+
+This folder contains JS / Script files for specific APP behaviour (.txt, .JSON)
+
+

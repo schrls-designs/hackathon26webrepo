@@ -6,11 +6,11 @@ import UtilitiesService from "../Services/Utilities.js";
 // CORE
 const LoadingMeta = {
     "Standard": {
-        "Duration": 3, // Seconds to 99%
+        "Duration": 1, // 3 Seconds to 99%
         "Target": 0.99 // Percentage to fake to
     },
     "Fake": {
-        "Duration": 10, // Seconds to get to 100%
+        "Duration": 1, // 10 Seconds to get to 100%
         "Target": 1 // Percentage to die waiting for
     }
 }
@@ -34,17 +34,6 @@ class LoadingBarComponent
         this.LoadingBarDiv = this.LoadingBarBackingDiv.querySelector("#LoadingBar");
         this.LoadingTextHeader = this.BlackScreenDiv.querySelector("#LoadingText");
     }
-
-    Finish() 
-    {
-        // Functions
-        // INIT
-        CoreComponentModule.UnbindRuntimeMethod(this.Element);
-        this.Element.parentNode.removeChild(this.Element);
-
-        return CoreComponentModule.LoadingBarFinished();
-    }
-
 
     RenderLoading(DeltaTime, AccumulatedTime) 
     {
@@ -89,11 +78,9 @@ class LoadingBarComponent
         }
         else if (this.State == "Fake") 
         {
-            this.Finish();
+            CoreComponentModule.RemoveHTMLComponent(this);
         }
     }
-
-
 
 
     Initialise() 
@@ -107,6 +94,8 @@ class LoadingBarComponent
     {
         // Functions
         // INIT
+        CoreComponentModule.UnbindRuntimeMethod(this.Element);
+        return CoreComponentModule.LoadingBarFinished();
     }
 
 }

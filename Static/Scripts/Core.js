@@ -74,6 +74,14 @@ async function GetHTMLComponent(ComponentName)
     return await response.text();
 }
 
+function RemoveHTMLComponent(Component) 
+{
+    // Functions
+    // INIT
+    Component.End();
+    UtilitiesService.Destroy(Component.Element);
+}
+
 async function AddHTMLComponent(ComponentName, Options) 
 {
     // CORE
@@ -86,6 +94,8 @@ async function AddHTMLComponent(ComponentName, Options)
     let ComponentHandlerClass;
 
     let ComponentWrapperDiv = document.createElement("div");
+    ComponentWrapperDiv.style.padding = "0";
+    ComponentWrapperDiv.style.margin = "0";
     ComponentWrapperDiv.id = "Component" + ComponentName;
     ComponentWrapperDiv.innerHTML = ComponentHTML;
 
@@ -153,7 +163,7 @@ async function Initialise()
 
     document.title = window.Core["SiteName"];
 
-    AddHTMLComponent("Body").then( () =>
+    AddHTMLComponent("Desktop").then( () =>
     {
         AddHTMLComponent("Taskbar").then( () => 
         {
@@ -177,6 +187,7 @@ CoreComponentModule.BindRuntimeMethod = BindRuntimeMethod;
 CoreComponentModule.UnbindRuntimeMethod = UnbindRuntimeMethod;
 CoreComponentModule.LoadingBarFinished = LoadingBarFinished;
 
+CoreComponentModule.RemoveHTMLComponent = RemoveHTMLComponent;
 CoreComponentModule.AddHTMLComponent = AddHTMLComponent;
 
 CoreComponentModule.Initialise = Initialise;

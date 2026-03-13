@@ -11,7 +11,7 @@ class BodyComponent
     constructor(DOMElement) 
     {
         this.Element = DOMElement;
-        this.DesktopAppsDiv = document.getElementById("DesktopApp");
+        this.DesktopAppsDiv = DOMElement.querySelector("#DesktopApp");
     }
 
     async Initialise() 

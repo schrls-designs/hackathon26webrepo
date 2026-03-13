@@ -1,0 +1,5 @@
+Description:
+
+This folder contains component script files for the web app (.js)
+
+

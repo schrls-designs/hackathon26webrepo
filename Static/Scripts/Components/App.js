@@ -86,7 +86,7 @@ class AppComponent
         {
             // Functions
             // INIT
-            CursorImage.parentNode.removeChild(CursorImage);
+            return UtilitiesService.Destroy(CursorImage);
         }
 
         CoreComponentModule.UnbindRuntimeMethod("FakeLoading");
@@ -169,8 +169,9 @@ class AppComponent
         {
             // Functions
             // INIT
-            console.log("Clicked!");
-            console.log(ClickedEvents);
+            
+            /*console.log("Clicked!");
+            console.log(ClickedEvents);*/
 
             for (const i in ClickedEvents) 
             {

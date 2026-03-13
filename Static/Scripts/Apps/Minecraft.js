@@ -15,7 +15,10 @@ class AppHandler
         // Functions
         // INIT
 
-        CoreComponentModule.AddHTMLComponent("ErrorForm");
+        CoreComponentModule.AddHTMLComponent("Form", 
+        {
+            "Args": ["CRITICAL DRAGGABLE ERROR", "ERROR", "Error Code 0xC47"]
+        });
     }
 }
 
